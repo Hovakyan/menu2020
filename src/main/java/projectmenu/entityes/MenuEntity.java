@@ -4,8 +4,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -16,7 +16,13 @@ public class MenuEntity extends AbstractEntity {
     @Column(nullable = false)
     private String name;
 
+    @OneToMany(mappedBy = "menuEntity", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<MenuItemEntity> menuItemEntityList;
 
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "restaurant_id")
+    private RestaurantEntity restaurantEntity;
 
 
 }

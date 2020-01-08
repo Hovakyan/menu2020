@@ -4,8 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -17,4 +16,8 @@ public class MenuItemEntity extends AbstractEntity{
     private String name;
     @Column(nullable = false)
     private Integer price;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "menu_id")
+    private MenuEntity menuEntity;
 }

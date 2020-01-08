@@ -4,8 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -17,4 +16,8 @@ public class OrderItemsEntity extends AbstractEntity{
     private Integer amount;
 
 
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id")
+    private OrderEntity orderEntity;
 }
