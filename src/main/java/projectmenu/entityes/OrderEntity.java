@@ -5,10 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Calendar;
 import java.util.List;
 
@@ -20,7 +17,7 @@ public class OrderEntity extends AbstractEntity{
 
     @Column(nullable = false)
     private Integer totalPrice;
-    @Column(nullable = false)
+    @Temporal(TemporalType.DATE)
     private Calendar deliveryDate;
 
 
