@@ -16,13 +16,11 @@ public class MenuEntity extends AbstractEntity {
     @Column(nullable = false)
     private String name;
 
+
     @OneToMany(mappedBy = "menuEntity", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<MenuItemEntity> menuItemEntityList;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "restaurant_id")
-    private RestaurantEntity restaurantEntity;
 
 
 }

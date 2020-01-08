@@ -20,4 +20,10 @@ public class OrderItemsEntity extends AbstractEntity{
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id")
     private OrderEntity orderEntity;
+
+
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "menuItem_id")
+    MenuItemEntity menuItemEntity;
 }
