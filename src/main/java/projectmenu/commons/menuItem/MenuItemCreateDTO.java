@@ -9,5 +9,5 @@ public class MenuItemCreateDTO {
 
     private Long id;
     private String name;
-    private Integer price;
+    private Double price;
 }

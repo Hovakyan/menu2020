@@ -16,7 +16,7 @@ import java.util.List;
 public class OrderEntity extends AbstractEntity{
 
     @Column(nullable = false)
-    private Integer totalPrice;
+    private Double totalPrice;
     @Temporal(TemporalType.DATE)
     private Calendar deliveryDate;
 

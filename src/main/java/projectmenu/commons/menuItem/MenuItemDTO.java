@@ -8,5 +8,5 @@ import lombok.Setter;
 public class MenuItemDTO {
     private Long id;
     private String name;
-    private Integer price;
+    private Double price;
 }

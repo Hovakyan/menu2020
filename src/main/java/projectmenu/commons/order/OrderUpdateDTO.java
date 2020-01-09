@@ -9,6 +9,6 @@ import java.util.Calendar;
 @Setter
 public class OrderUpdateDTO {
     private Long id;
-    private Integer totalPrice;
+    private Double totalPrice;
     private Calendar deliveryDate;
 }

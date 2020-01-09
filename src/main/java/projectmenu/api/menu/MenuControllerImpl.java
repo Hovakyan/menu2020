@@ -18,7 +18,14 @@ public class MenuControllerImpl implements MenuController{
     }
 
     @Override
+    public void delete(Long id) {
+        menuService.delete(id);
+    }
+
+    @Override
     public MenuDTO update(MenuUpdateDTO menuUpdateDTO) {
-        return null;
+        return menuService.update(menuUpdateDTO);
+
+
     }
 }

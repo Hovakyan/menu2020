@@ -9,6 +9,6 @@ import java.util.Calendar;
 public class OrderDTO {
 
     private Long id;
-    private Integer totalPrice;
+    private Double totalPrice;
     private Calendar deliveryDate;
 }

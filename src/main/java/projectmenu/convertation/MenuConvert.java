@@ -36,8 +36,9 @@ public class MenuConvert {
         return menuDTO;
     }
 
-    void update (MenuUpdateDTO menuUpdateDTO){
+   public void update (MenuUpdateDTO menuUpdateDTO){
         MenuEntity menuEntity = menuRepository.getOne(menuUpdateDTO.getId());
+        menuEntity.setName(menuUpdateDTO.getName());
 
     }
 

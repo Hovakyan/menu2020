@@ -33,4 +33,11 @@ public class RestaurantConvert {
         return restaurantDTO;
     }
 
+    public RestaurantDTO convertid(RestaurantEntity restaurantEntity){
+       RestaurantDTO restaurantDTO = new RestaurantDTO();
+       restaurantDTO.setName(restaurantEntity.getName());
+       restaurantDTO.setId(restaurantEntity.getMenuEntity().getId());
+       return restaurantDTO;
+    }
+
 }

@@ -6,8 +6,10 @@ import lombok.Setter;
 import org.springframework.stereotype.Component;
 import projectmenu.commons.menuItem.MenuItemCreateDTO;
 import projectmenu.commons.menuItem.MenuItemDTO;
+import projectmenu.commons.menuItem.MenuItemUpdateDTO;
 import projectmenu.entityes.MenuEntity;
 import projectmenu.entityes.MenuItemEntity;
+import projectmenu.repository.MenuItemRepository;
 import projectmenu.repository.MenuRepository;
 
 @Component
@@ -17,6 +19,7 @@ import projectmenu.repository.MenuRepository;
 public class MenuItemConvert {
 
     private final MenuRepository menuRepository;
+    private final MenuItemRepository menuItemRepository;
 
    public MenuItemEntity convert(MenuItemCreateDTO menuItemCreateDTO){
        MenuEntity menuEntity = menuRepository.getOne(menuItemCreateDTO.getId());
@@ -34,6 +37,12 @@ public class MenuItemConvert {
         menuItemDTO.setName(menuItemEntity.getName());
         menuItemDTO.setPrice(menuItemEntity.getPrice());
         return menuItemDTO;
+    }
+
+    public void update(MenuItemUpdateDTO menuItemUpdateDTO){
+       MenuItemEntity menuItemEntity = menuItemRepository.getOne(menuItemUpdateDTO.getId());
+       menuItemEntity.setName(menuItemUpdateDTO.getName());
+       menuItemEntity.setPrice(menuItemUpdateDTO.getPrice());
     }
 
 }
